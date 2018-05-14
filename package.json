@@ -1,6 +1,6 @@
 {
   "name": "kubelogs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a cli command to print all kubernetes pod logs at once",
   "main": "index.js",
   "scripts": {

@@ -72,7 +72,7 @@ exec('kubectl get pods | tail -n +2 | grep -oE \'^[^ ]+\'', (err, stdout, stderr
     child.stdout.on('data', (chunk) => {
       // data from standard output is here as buffers
       let string = chunk.toString('utf-8')
-      string.split(/[\r\n]{1,}/).forEach(line => print(pod, line))
+      string.replace(/\n$/, '').split(/[\r\n]{1,}/).forEach(line => print(pod, line))
     });
 
     // since these are streams, you can pipe them elsewhere
